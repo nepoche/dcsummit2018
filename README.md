@@ -1,1 +1,0 @@
-This is the submission for the code-a-thon sponsored by discover at the DC Blockchain summit 2018!
