@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  private billsUrl = "http://lims.dccouncil.us/api/v1/Legislation/LatestLaws/10"
+  data: any = {};
+
+  constructor(private http: Http) {
+
+  }
+
+  getData() {
+    return this.http.get(this.billsUrl)
+      .map((res: Response) => res.json());
+  }
 
   ngOnInit() {
+    this.getData().subscribe(data => {
+      console.log(data);
+      this.data = data;
+    })
+
   }
 
 }
