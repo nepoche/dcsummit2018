@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class MainComponent implements OnInit {
 
-  private billsUrl = "http://lims.dccouncil.us/api/v1/Legislation/LatestLaws/10"
+  private billsUrl = "http://lims.dccouncil.us/api/v1/Legislation/LatestLaws/50"
   data: any = {};
 
   constructor(private http: Http) {
