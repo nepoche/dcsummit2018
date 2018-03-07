@@ -28,6 +28,7 @@
     "rxjs": "^5.5.6",
     "truffle-contract": "^3.0.4",
     "uport-connect": "^0.7.1",
+    "web3-typescript-typings": "^0.10.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

@@ -9,12 +9,13 @@ export class LegislationService {
 
     private contract;
     private account;
+    public web3;
 
     constructor() {
-        const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:9545'));
-        this.account = web3.eth.accounts[0];
+        this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:9545'));
+        this.account = this.web3.eth.accounts[0];
         this.contract = contract(LegislationArtifacts);
-        this.contract.setProvider(web3.currentProvider);
+        this.contract.setProvider(this.web3.currentProvider);
     }
 
     public getAccount(): string {
@@ -69,7 +70,7 @@ export class LegislationService {
 
         let meta;
         return this.contract.at(address)
-          .then(instance => { meta = instance; return meta.totalFundsForInWei.call(); })
+          .then(instance => { meta = instance; return (<string>meta.totalFundsForInWei.call()); })
           .then(funds4 => { legRequest.fundsFor = funds4.toNumber(); return meta.totalFundsAgainstInWei.call(); })
           .then(fundsNo => { legRequest.fundsAgainst = fundsNo.toNumber(); return meta.numVotesFor.call(); })
           .then(votes4 => { legRequest.votesFor = votes4.toNumber(); return meta.numVotesAgainst.call(); })

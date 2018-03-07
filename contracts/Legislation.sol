@@ -26,6 +26,10 @@ contract Legislation {
 
     function Legislation() public {
         oracle = msg.sender;
+        totalFundsForInWei = 0;
+        totalFundsAgainstInWei = 0;
+        numVotesFor = 0;
+        numVotesAgainst = 0;
     }
 
     function deposit(bool desiredOutcome) public payable {
