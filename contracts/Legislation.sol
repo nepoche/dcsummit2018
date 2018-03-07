@@ -12,10 +12,10 @@ contract Legislation {
     mapping (address => bool) public politicianVote;
     address[] public politiciansThatVoted;
     address[] public users;
-    uint totalFundsForInWei;
-    uint totalFundsAgainstInWei;
-    uint numVotesFor;
-    uint numVotesAgainst;
+    uint public totalFundsForInWei;
+    uint public totalFundsAgainstInWei;
+    uint public numVotesFor;
+    uint public numVotesAgainst;
 
     event Deposited(address _user, uint _amount, bool _desiredOutcome);
 

@@ -10,6 +10,9 @@ import { MainModule } from './main/main.module';
 import { StatisticsModule } from './statistics/statistics.module';
 import { HttpModule } from '@angular/http';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,14 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
     LoginModule,
     LandingModule,
     MainModule,
     StatisticsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ AngularFirestore ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
