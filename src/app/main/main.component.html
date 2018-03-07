@@ -1,61 +1,62 @@
 <div class="page-container">
-    <div class="sidebar-menu">
-       <div class="sidebar-menu-inner">
-          <header class="logo-env">
-             <!-- logo -->
-             <div class="logo" style="text-align: center"> <a href="index.html">
+  <div class="sidebar-menu">
+    <div class="sidebar-menu-inner">
+      <header class="logo-env">
+        <!-- logo -->
+        <div class="logo" style="text-align: center"> <a href="index.html">
                 <img src="assets/images/logo-white.png" width="200" alt="" />
                 </a>
-             </div>
-          </header>
-          <ul id="main-menu" class="main-menu">
-             <!-- add class "multiple-expanded" to allow multiple submenus to open -->
-             <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
-             <li class="opened active"> <a href="index.html">
+        </div>
+      </header>
+      <ul id="main-menu" class="main-menu">
+        <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+        <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+        <li class="opened active"> <a href="index.html">
                 <i class="entypo-gauge"></i>
                 <span class="title">Statistics</span>
                 </a>
-             </li>
-             <li class="has-sub opened">
-                <a href="layout-api.html">
+        </li>
+        <li class="has-sub opened">
+          <a href="layout-api.html">
                 <i class="entypo-layout"></i>
                 <span class="title">Proposals</span>
                 </a>
-                <ul>
-                   <li> <a href="layout-api.html">
+          <ul>
+            <li> <a href="layout-api.html">
                       <span class="title">Issues</span>
                       </a>
-                   </li>
-                   <li> <a href="layout-api.html">
+            </li>
+            <li> <a href="layout-api.html">
                       <span class="title">Legislation</span>
                       </a>
-                   </li>
-                   <li> <a href="layout-api.html">
+            </li>
+            <li> <a href="layout-api.html">
                       <span class="title">Campaign</span>
                       </a>
-                   </li>
-                </ul>
-             </li>
-             <li class="">
-                <a href="mailbox.html">
+            </li>
+          </ul>
+        </li>
+        <li class="">
+          <a href="mailbox.html">
                 <i class="entypo-mail"></i>
                 <span class="title">Updates</span>
                 <span class="badge badge-secondary">8</span>
                 </a>
 
-             </li>
-             <li class="">
-                <a href="forms-main.html">
+        </li>
+        <li class="">
+          <a href="forms-main.html">
                 <i class="entypo-doc-text"></i>
                 <span class="title">Directory of Representatives</span>
                 </a>
-             </li>
-          </ul>
-       </div>
+        </li>
+      </ul>
     </div>
+  </div>
 
   <div class="main-content">
-    <h3>Table without DataTable Header</h3>
+    <h1>Legislations</h1>
+    <hr>
 
     <script type="text/javascript">
       jQuery(window).load(function() {
@@ -117,26 +118,19 @@
 
       <tbody>
         <tr *ngFor="let bill of data">
-        <td>{{bill.ShortTitle}}</td>
-        <td>{{bill.Id}}</td>
-        <td>{{bill.IntroductionDate}}</td>
-        <td>
-            <a class="btn btn-default btn-sm btn-icon icon-left" routerLink="/bill/{{bill.LegislationNumber}}">Vote</a>
-        </td>
+          <td>{{bill.Id}}</td>
+
+          <td>{{bill.ShortTitle}}</td>
+          <td> {{bill.IntroductionDate}} </td>
+          <td>
+            <a class="btn btn-info btn-md btn-icon icon-middle" routerLink="/bill/{{bill.LegislationNumber}}">Vote</a>
+          </td>
         </tr>
       </tbody>
     </table>
 
     <br />
 
-    <a href="javascript: fnClickAddRow();" class="btn btn-primary">
-			<i class="entypo-plus"></i>
-			Add Row
-		</a>
-
-
-    <!-- Footer -->
-    <footer class="main"> &copy; 2015 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a> </footer>
   </div>
 
 </div>
