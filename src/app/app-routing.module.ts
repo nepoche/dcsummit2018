@@ -11,11 +11,15 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: './main/main.module#MainModule'
+  },
+  {
+      path: 'statistics',
+      loadChildren: './statistics/statistics.module#StatisticsModule'
   }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

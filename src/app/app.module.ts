@@ -7,16 +7,18 @@ import { AppComponent } from './app.component';
 import { LandingModule } from './landing/landing.module';
 import { LoginModule } from './login/login.module';
 import { MainModule } from './main/main.module';
+import { StatisticsModule } from './statistics/statistics.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     LoginModule,
     LandingModule,
     MainModule,
+    StatisticsModule
     AppRoutingModule
   ],
   providers: [],
