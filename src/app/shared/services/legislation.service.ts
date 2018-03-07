@@ -21,6 +21,37 @@ export class LegislationService {
         return this.account;
     }
 
+    public getFundingFor(cAddress: string) {
+
+        let temp;
+
+        return this.contract.at(cAddress)
+          .then( instance => { temp = instance; return temp.totalFundsForInWei.call(); });
+    }
+
+    public getFundingAgainst(cAddress: string) {
+        let temp;
+
+        return this.contract.at(cAddress)
+          .then( instance => { temp = instance; return temp.totalFundsAgainstInWei.call(); });
+    }
+
+    public getVotesFor(cAddress: string) {
+
+        let temp;
+
+        return this.contract.at(cAddress)
+          .then( instance => { temp = instance; return temp.numVotesFor.call(); });
+    }
+
+    public getVotesAgainst(cAddress: string) {
+
+        let temp;
+
+        return this.contract.at(cAddress)
+          .then( instance => { temp = instance; return temp.numVotesAgainst.call(); });
+    }
+
     public createContract(): Promise<LegislationRequest> {
 
         let legislationRequest: LegislationRequest;
