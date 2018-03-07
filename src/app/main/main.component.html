@@ -489,47 +489,22 @@
     <table class="table table-bordered table-striped datatable" id="table-2">
       <thead>
         <tr>
-          <th>
-            <div class="checkbox checkbox-replace">
-              <input type="checkbox" id="chk-1">
-            </div>
-          </th>
-          <th>Student Name</th>
-          <th>Average Grade</th>
-          <th>Curriculum / Occupation</th>
+          <th>Bill Name</th>
+          <th>Bill ID</th>
+          <th>Introduced</th>
           <th>Actions</th>
         </tr>
       </thead>
 
       <tbody>
-
-        <tr>
-          <td>
-            <div class="checkbox checkbox-replace">
-              <input type="checkbox" id="chk-1">
-            </div>
-          </td>
-          <td>Randy S. Smith</td>
-          <td>8.7</td>
-          <td>Social and human service</td>
-          <td>
-            <a href="#" class="btn btn-default btn-sm btn-icon icon-left">
-							<i class="entypo-pencil"></i>
-							Edit
-						</a>
-
-            <a href="#" class="btn btn-danger btn-sm btn-icon icon-left">
-							<i class="entypo-cancel"></i>
-							Delete
-						</a>
-
-            <a href="#" class="btn btn-info btn-sm btn-icon icon-left">
-							<i class="entypo-info"></i>
-							Profile
-						</a>
-          </td>
+        <tr *ngFor="let bill of data">
+        <td>{{bill.ShortTitle}}</td>
+        <td>{{bill.Id}}</td>
+        <td>{{bill.IntroductionDate}}</td>
+        <td>
+            <a class="btn btn-default btn-sm btn-icon icon-left" routerLink="/bill/{{bill.LegislationNumber}}">Vote</a>
+        </td>
         </tr>
-
       </tbody>
     </table>
 

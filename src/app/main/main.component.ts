@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -13,7 +14,15 @@ export class MainComponent implements OnInit {
   data: any = {};
 
   constructor(private http: Http) {
+    this.getBills();
+    this.getData();
+  }
 
+  getBills() {
+    this.getData().subscribe(data => {
+      this.data = data;
+      console.log(this.data);
+    })
   }
 
   getData() {
@@ -22,11 +31,6 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getData().subscribe(data => {
-      console.log(data);
-      this.data = data;
-    })
-
   }
 
 }
