@@ -8,7 +8,6 @@ contract Legislation {
     }
 
     address public oracle;
-    string public billID;
     mapping (address => earmarkedDeposit) public userContributions;
     mapping (address => bool) public politicianVote;
     address[] public politiciansThatVoted;
@@ -25,8 +24,7 @@ contract Legislation {
         _;
     }
 
-    function Legislation(string _billID) public {
-        billID = _billID;
+    function Legislation() public {
         oracle = msg.sender;
     }
 
