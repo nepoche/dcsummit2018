@@ -42,10 +42,6 @@
                 <span class="title">Updates</span>
                 <span class="badge badge-secondary">8</span>
                 </a>
-
-<<<<<<< HEAD
-  <h3>{{data}}</h3>
-=======
         </li>
         <li class="">
           <a href="forms-main.html">
@@ -56,7 +52,7 @@
       </ul>
     </div>
   </div>
->>>>>>> c107e3277ed377082b2880b0b2688a952cc30444
+
 
   <div class="main-content">
 
@@ -107,10 +103,10 @@
             <label class="col-sm-3 control-label">Donation Amount</label>
 
             <div class="col-sm-5">
-              <input type="text" class="form-control" data-mask="fdecimal" placeholder="" data-dec="," data-rad="." maxlength="10" />
-              <input type="radio" name="vote" value="for" checked> For<br>
-              <input type="radio" name="vote" value="against"> Against<br>
-              <button type="submit" form="form1" value="Submit">Submit</button>
+              <input type="text" class="form-control" data-mask="fdecimal" placeholder="" data-dec="," data-rad="." maxlength="10" [(ngModel)]="request.etherAmount" />
+              <input type="radio" name="vote" value="true" [(ngModel)]="request.userDecision" checked>For<br>
+              <input type="radio" name="vote" value="false" [(ngModel)]="request.userDecision">Against<br>
+              <button type="submit" form="form1" value="Submit" (click)="deposit()">Submit</button>
 
             </div>
           </div>
@@ -131,10 +127,7 @@
           </div>
 
           <div class="tile-footer">
-            <h4>
-                          USD$244.32 in ETH
-                      </h4>
-
+            <h4></h4>
             <span>donated for the approval of this bill.</span>
           </div>
         </div>
@@ -149,10 +142,7 @@
           </div>
 
           <div class="tile-footer">
-            <h4>
-                          USD$153.32 in ETH
-                      </h4>
-
+            <h4>USD$153.32 in ETH</h4>
             <span>donated against this bill.</span>
           </div>
         </div>

@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { AngularFireModule } from 'angularfire2';
     StatisticsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ AngularFirestore ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
