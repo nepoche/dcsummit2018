@@ -70,7 +70,7 @@ export class LegislationService {
 
         let meta;
         return this.contract.at(address)
-          .then(instance => { meta = instance; return (<string>meta.totalFundsForInWei.call()); })
+          .then(instance => { meta = instance; return (<string> meta.totalFundsForInWei.call()); })
           .then(funds4 => { legRequest.fundsFor = funds4.toNumber(); return meta.totalFundsAgainstInWei.call(); })
           .then(fundsNo => { legRequest.fundsAgainst = fundsNo.toNumber(); return meta.numVotesFor.call(); })
           .then(votes4 => { legRequest.votesFor = votes4.toNumber(); return meta.numVotesAgainst.call(); })
