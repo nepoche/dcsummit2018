@@ -57,116 +57,108 @@
   <div class="main-content">
 
 
-      <div class="row">
-          <div class="col-sm-12">
-              <div class="well">
-                  <h1>{{data.Legislation.ShortTitle}}</h1>
-              </div>
-          </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="well">
+          <h1>{{data.Legislation.ShortTitle}}</h1>
+        </div>
       </div>
+    </div>
 
-      <div class="row">
-
-          <div class="col-sm-9">
-
-              <div class="row">
-
-                  <div class="col-sm-6">
-
-
-                  </div>
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+          </div>
+        </div>
 
 
-
-              </div>
-
-
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <div class="panel-title">
-                          <h4>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h4>
                               Information
                               <br />
 
                           </h4>
-                      </div>
-
-                  </div>
-
-
-                  <div class="panel-body">
-                      <p style="font-size: 14px"><strong>Act Number:</strong> {{data.Legislation.ActNumber}}</p>
-                      <p style="font-size: 14px"><strong>Co Sponsor:</strong> {{data.Legislation.CoSponsor}}</p>
-                      <p style="font-size: 14px"><strong>Committee Referral:</strong> {{data.Legislation.CommitteeReferral}}</p>
-                    <hr>
-                     <p style="font-size: 14px">{{data.Legislation.AdditionalInformation}}</p>
-
-                     <hr>
-
-                     <a href="{{data.Legislation.DocumentUrl}}">{{data.Legislation.DocumentUrl}}</a>
-                  </div>
-              </div>
-
-              <form role="form" class="form-horizontal form-groups-bordered">
-
-                  <div class="form-group">
-                      <label class="col-sm-3 control-label">Donation Amount</label>
-
-                      <div class="col-sm-5">
-                          <input type="text" class="form-control" data-mask="fdecimal" placeholder="" data-dec="," data-rad="." maxlength="10" />
-                          <button type="submit" form="form1" value="Submit">Submit</button>
-
-                      </div>
-                  </div>
-
-              </form>
-
+            </div>
           </div>
 
-          <div class="col-sm-3">
+          <div class="panel-body">
+            <p style="font-size: 14px"><strong>Act Number:</strong> {{data.Legislation.ActNumber}}</p>
+            <p style="font-size: 14px"><strong>Co Sponsor:</strong> {{data.Legislation.CoSponsor}}</p>
+            <p style="font-size: 14px"><strong>Committee Referral:</strong> {{data.Legislation.CommitteeReferral}}</p>
+            <hr>
+            <p style="font-size: 14px">{{data.Legislation.AdditionalInformation}}</p>
 
-              <div class="tile-progress tile-green">
-                  <div class="tile-header">
-                      <h3>Funded for {{data.Legislation.ActNumber}}.</h3>
-                  </div>
+            <hr>
 
-                  <div class="tile-progressbar">
-                      <span data-fill="44%"></span>
-                  </div>
-
-                  <div class="tile-footer">
-                      <h4>
-                          USD$244.32 in ETH
-                      </h4>
-
-                      <span>donated for the approval of this bill.</span>
-                  </div>
-              </div>
-
-              <div class="tile-progress tile-red">
-                  <div class="tile-header">
-                      <h3>Funded against {{data.Legislation.ActNumber}}.</h3>
-                  </div>
-
-                  <div class="tile-progressbar">
-                      <span data-fill="32.2%"></span>
-                  </div>
-
-                  <div class="tile-footer">
-                      <h4>
-                          USD$153.32 in ETH
-                      </h4>
-
-                      <span>donated against this bill.</span>
-                  </div>
-              </div>
-
-
-
+            <a href="{{data.Legislation.DocumentUrl}}">{{data.Legislation.DocumentUrl}}</a>
           </div>
+        </div>
+
+        <form role="form" class="form-horizontal form-groups-bordered">
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Donation Amount</label>
+
+            <div class="col-sm-5">
+              <input type="text" class="form-control" data-mask="fdecimal" placeholder="" data-dec="," data-rad="." maxlength="10" />
+              <input type="radio" name="vote" value="for" checked> For<br>
+              <input type="radio" name="vote" value="against"> Against<br>
+              <button type="submit" form="form1" value="Submit">Submit</button>
+
+            </div>
+          </div>
+
+        </form>
 
       </div>
 
+      <div class="col-sm-3">
+
+        <div class="tile-progress tile-green">
+          <div class="tile-header">
+            <h3>Funded for {{data.Legislation.ActNumber}}.</h3>
+          </div>
+
+          <div class="tile-progressbar">
+            <span data-fill="44%"></span>
+          </div>
+
+          <div class="tile-footer">
+            <h4>
+                          USD$244.32 in ETH
+                      </h4>
+
+            <span>donated for the approval of this bill.</span>
+          </div>
+        </div>
+
+        <div class="tile-progress tile-red">
+          <div class="tile-header">
+            <h3>Funded against {{data.Legislation.ActNumber}}.</h3>
+          </div>
+
+          <div class="tile-progressbar">
+            <span data-fill="32.2%"></span>
+          </div>
+
+          <div class="tile-footer">
+            <h4>
+                          USD$153.32 in ETH
+                      </h4>
+
+            <span>donated against this bill.</span>
+          </div>
+        </div>
 
 
-</div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
