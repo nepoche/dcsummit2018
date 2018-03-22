@@ -36,7 +36,6 @@ export class BillComponent implements OnInit {
     this.getBill();
     this.contractAddress = this.dbService.getContractAddress(this.billNum);
     this.contractAddress.subscribe(res => {
-      console.log(res[0].contractAddress);
       this.legService.getContract(res[0].contractAddress)
           .then(result => {
             this.request = result;
@@ -61,6 +60,14 @@ export class BillComponent implements OnInit {
 
   deposit() {
     return this.legService.depositFunds(this.request.contractAddress, this.request.etherAmount, this.request.userDecision);
+  }
+
+  setUserDecisionTrue() {
+    this.request.userDecision = true;
+  }
+
+  setUserDecisionFalse() {
+    this.request.userDecision = false;
   }
 
 }

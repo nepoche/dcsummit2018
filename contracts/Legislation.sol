@@ -32,7 +32,7 @@ contract Legislation {
         numVotesAgainst = 0;
     }
 
-    function deposit(bool desiredOutcome) public payable {
+    function deposit(bool desiredOutcome) public payable returns (bool success) {
         users.push(msg.sender);
         userContributions[msg.sender].amount = msg.value;
         if (desiredOutcome) {
@@ -43,6 +43,8 @@ contract Legislation {
         userContributions[msg.sender].outcome = desiredOutcome;
 
         Deposited(msg.sender, msg.value, desiredOutcome);
+
+        return true;
     }
 
     function resolve(bool outcome) onlyOracle {

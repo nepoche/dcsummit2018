@@ -104,8 +104,8 @@
 
             <div class="col-sm-5">
               <input type="text" class="form-control" data-mask="fdecimal" placeholder="" data-dec="," data-rad="." maxlength="10" [(ngModel)]="request.etherAmount" />
-              <input type="radio" name="vote" value="true" [(ngModel)]="request.userDecision" checked>For<br>
-              <input type="radio" name="vote" value="false" [(ngModel)]="request.userDecision">Against<br>
+              <input type="radio" name="vote" value="true" (click)="setUserDecisionTrue()" checked>For<br>
+              <input type="radio" name="vote" value="false" (click)="setUserDecisionFalse()">Against<br>
               <button type="submit" form="form1" value="Submit" (click)="deposit()">Submit</button>
 
             </div>
